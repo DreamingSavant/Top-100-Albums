@@ -20,8 +20,9 @@
 		A6483FC324561F220060A97E /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6483FC224561F210060A97E /* AlbumDetailViewController.swift */; };
 		A6483FC5245623090060A97E /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6483FC4245623090060A97E /* Networking.swift */; };
 		A6483FC82456240C0060A97E /* TopAlbumsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6483FC72456240C0060A97E /* TopAlbumsTableViewCell.swift */; };
-		A6483FCA245660C80060A97E /* EndpointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6483FC9245660C80060A97E /* EndpointType.swift */; };
+		A6483FCA245660C80060A97E /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6483FC9245660C80060A97E /* Structs.swift */; };
 		A6483FCC24566C230060A97E /* TopAlbumTableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6483FCB24566C230060A97E /* TopAlbumTableViewCellModel.swift */; };
+		A6484011245A5B320060A97E /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6484010245A5B320060A97E /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +62,9 @@
 		A6483FC224561F210060A97E /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		A6483FC4245623090060A97E /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		A6483FC72456240C0060A97E /* TopAlbumsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumsTableViewCell.swift; sourceTree = "<group>"; };
-		A6483FC9245660C80060A97E /* EndpointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointType.swift; sourceTree = "<group>"; };
+		A6483FC9245660C80060A97E /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		A6483FCB24566C230060A97E /* TopAlbumTableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopAlbumTableViewCellModel.swift; sourceTree = "<group>"; };
+		A6484010245A5B320060A97E /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,7 @@
 			children = (
 				A6483F8A24561AAA0060A97E /* AppDelegate.swift */,
 				A6483F8C24561AAA0060A97E /* SceneDelegate.swift */,
-				A6483FC6245623100060A97E /* Networkin */,
+				A6483FC6245623100060A97E /* Networking */,
 				A6483FC124561F030060A97E /* AlbumDetail */,
 				A6483FBC24561C420060A97E /* TopAlbums */,
 				A6483F9324561AAE0060A97E /* Assets.xcassets */,
@@ -164,13 +166,14 @@
 			path = AlbumDetail;
 			sourceTree = "<group>";
 		};
-		A6483FC6245623100060A97E /* Networkin */ = {
+		A6483FC6245623100060A97E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				A6483FC4245623090060A97E /* Networking.swift */,
-				A6483FC9245660C80060A97E /* EndpointType.swift */,
+				A6484010245A5B320060A97E /* Response.swift */,
+				A6483FC9245660C80060A97E /* Structs.swift */,
 			);
-			path = Networkin;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,10 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6483FCA245660C80060A97E /* EndpointType.swift in Sources */,
+				A6483FCA245660C80060A97E /* Structs.swift in Sources */,
 				A6483F8F24561AAA0060A97E /* TopAlbumsTableViewController.swift in Sources */,
 				A6483FC82456240C0060A97E /* TopAlbumsTableViewCell.swift in Sources */,
 				A6483FBE24561C630060A97E /* TopAlbumsViewModel.swift in Sources */,
+				A6484011245A5B320060A97E /* Response.swift in Sources */,
 				A6483FBB24561B050060A97E /* MainCoordinator.swift in Sources */,
 				A6483FC024561DE00060A97E /* Album.swift in Sources */,
 				A6483FCC24566C230060A97E /* TopAlbumTableViewCellModel.swift in Sources */,

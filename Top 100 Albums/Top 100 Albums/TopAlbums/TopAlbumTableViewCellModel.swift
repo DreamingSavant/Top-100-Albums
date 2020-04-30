@@ -11,23 +11,28 @@ import Foundation
 
 class TopAlbumTableViewCellModel {
     
-    private let result: Result
+    private let result: Results
     
-    init(result: Result) {
+    init(result: Results) {
         self.result = result
     }
     
     public var nameOfAlbum: String {
-           return result.albumName
+        return result.albumName ?? ""
           }
           
           public var nameOfArtist: String {
-           return result.artistName
+            return result.artistName ?? ""
           }
           
           public var albumImageUrl: String {
-              
-              // TODO: return url or uiimage from url later
+            // change string to data type??
            return result.artworkURL!
           }
+    // TODO: add missing variables in structs file. album url etc
+    
+    public var artistURL: String {
+        return result.artistUrl ?? ""
+    }
+        
 }
