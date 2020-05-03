@@ -8,42 +8,41 @@
 
 import Foundation
 
-
-// TODO: Setup an image, info shown on the cell plus genre, release date, and copyright info below the image. A button should also be included to point to album website
-
 class AlbumDetailViewModel {
     
-    var result: Results?
-    var genres: Genres?
+    var result: Results
+    var genres: Genres
+    
+    init(result: Results, genres: Genres){
+        self.result = result
+        self.genres = genres
+    }
     
     public var nameOfAlbum: String {
-        return result?.albumName ?? ""
+        return result.albumName ?? ""
     }
     
     public var nameOfArtist: String {
-        return result?.artistName ?? ""
+        return result.artistName ?? ""
     }
     
     public var albumImageUrl: String {
-        // change string to data type??
-        return result?.artworkURL ?? ""
-    }
-    // TODO: add missing variables in structs file. album url etc
-    
-    public var artistURL: String {
-        return result?.artistUrl ?? ""
+        return result.artworkURL ?? ""
     }
     
     public var genre: String {
-        return genres?.genreName ?? ""
+        return genres.genreName ?? ""
+    }
+    public var albumURL: String {
+        return result.albumURL ?? ""
     }
     
     public var releaseDate: String {
-        return result?.releaseDate ?? ""
+        return result.releaseDate ?? ""
     }
     
     public var copyright: String {
-        return result?.copyright ?? ""
+        return result.copyright ?? ""
     }
-
+    
 }

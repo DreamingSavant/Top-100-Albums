@@ -8,44 +8,42 @@
 
 import Foundation
 
-    struct Top100Albums: Codable {
-        let feed: Feed
-        
-        private enum CodingKeys: String, CodingKey {
-            case feed = "feed"
-        }
+struct Top100Albums: Codable {
+    let feed: Feed
+    
+    private enum CodingKeys: String, CodingKey {
+        case feed = "feed"
     }
+}
 
-    struct Feed: Codable {
-        let results: [Results]
-
-        private enum CodingKeys: String, CodingKey {
-            case results = "results"
-        }
+struct Feed: Codable {
+    let results: [Results]
+    
+    private enum CodingKeys: String, CodingKey {
+        case results = "results"
     }
+}
 
-    struct Results: Codable {
-        let artistName: String?
-        let releaseDate: String?
-        let albumName: String?
-        let artistUrl: String?
-        let artworkURL: String?
-        let albumURL: String?
-        let copyright: String?
-        
-        let genres: [Genres]
-        
-        private enum CodingKeys: String, CodingKey {
-            case artistName = "artistName"
-            case releaseDate = "releaseDate"
-            case albumName = "name"
-            case artistUrl = "artistUrl"
-            case artworkURL = "artworkUrl100"
-            case albumURL = "url"
-            case copyright = "copyright"
-            case genres = "genres"
-        }
+struct Results: Codable {
+    let artistName: String?
+    let releaseDate: String?
+    let albumName: String?
+    let artworkURL: String?
+    let albumURL: String?
+    let copyright: String?
+    
+    let genres: [Genres]
+    
+    private enum CodingKeys: String, CodingKey {
+        case artistName = "artistName"
+        case releaseDate = "releaseDate"
+        case albumName = "name"
+        case artworkURL = "artworkUrl100"
+        case albumURL = "url"
+        case copyright = "copyright"
+        case genres = "genres"
     }
+}
 
 struct Genres: Codable {
     let genreName: String?

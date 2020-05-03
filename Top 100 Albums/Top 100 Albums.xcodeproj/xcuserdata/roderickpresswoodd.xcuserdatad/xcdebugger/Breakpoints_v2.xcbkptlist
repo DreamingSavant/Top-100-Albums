@@ -7,129 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D792F2BE-FDEA-4463-AA82-6EE0DB2A2C7B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Top 100 Albums/TopAlbums/TopAlbumsTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "19D736B4-A3EE-4B65-AD61-3765D651EF22"
+            uuid = "C45CA879-00F5-43F4-A047-2FC017D001E6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Top 100 Albums/TopAlbums/TopAlbumsTableViewController.swift"
+            filePath = "Top 100 Albums/ViewModels/AlbumDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "genre"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7969BCE6-B388-4B81-9C67-039D23BDEB6F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Top 100 Albums/TopAlbums/TopAlbumsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "cellViewModel(index:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AF569091-A8CE-4FD6-B864-304BA389BAE1"
+            uuid = "268869F5-BF88-4B63-9A21-30B51ACFD412"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Top 100 Albums/TopAlbums/TopAlbumsTableViewController.swift"
+            filePath = "Top 100 Albums/ViewControllers/AlbumDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ABEF9C9B-1807-49B1-A792-405194B0F67D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Top 100 Albums/TopAlbums/TopAlbumsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "getMostPopularAlbums(completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5C7FB763-1598-4F88-9B13-EE0DE5475DFE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Top 100 Albums/TopAlbums/TopAlbumTableViewCellModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "init(result:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5C7FB763-1598-4F88-9B13-EE0DE5475DFE - 62b8443f294a5369"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Top_100_Albums.TopAlbumTableViewCellModel.__allocating_init(result: Top_100_Albums.Results) -&gt; Top_100_Albums.TopAlbumTableViewCellModel"
-                  moduleName = "Top 100 Albums"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roderickpresswoodd/Sample%20Projects/Top%20100%20Albums/Top%20100%20Albums/TopAlbums/TopAlbumTableViewCellModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "21">
-               </Location>
-               <Location
-                  uuid = "5C7FB763-1598-4F88-9B13-EE0DE5475DFE - e580394c53734348"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Top_100_Albums.TopAlbumTableViewCellModel.init(result: Top_100_Albums.Results) -&gt; Top_100_Albums.TopAlbumTableViewCellModel"
-                  moduleName = "Top 100 Albums"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/roderickpresswoodd/Sample%20Projects/Top%20100%20Albums/Top%20100%20Albums/TopAlbums/TopAlbumTableViewCellModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "28">
-               </Location>
-            </Locations>
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "viewModel"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

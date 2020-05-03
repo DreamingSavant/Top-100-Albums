@@ -19,7 +19,6 @@ class TopAlbumsViewModel {
         networking.performNetworkTask(type: Top100Albums.self) { [weak self] (response) in
             print("This is the response: \(response.feed)")
             self?.results = response.feed
-//            print("Here are the results of parsing, : ")
             completion?()
         }
     }
@@ -37,9 +36,9 @@ class TopAlbumsViewModel {
         return results.results.count
     }
     
-    public func selectedAlbum(index: Int) -> String {
-        guard let results = results else { return "none at all" }
-        return results.results[index].albumName!
+    public func detailsViewModel(for index: Int) -> AlbumDetailViewModel? {
+        guard let results = results else { return nil }
+        return AlbumDetailViewModel(result: results.results[index], genres: results.results[index].genres[0])
     }
     
     

@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let rootViewController = TopAlbumsTableViewController()
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        window?.rootViewController = AlbumDetailViewController() //rootViewController
+        window?.rootViewController = navigationController/*AlbumDetailViewController()*/ //rootViewController
         window?.makeKeyAndVisible()
         return true
     }

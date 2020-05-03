@@ -12,28 +12,31 @@ class TopAlbumsTableViewCell: UITableViewCell {
     
     public static let reuseIdentifier = "albumCellIdentifier"
     
-    // TODO: Setup outlets
-
-    // TODO: Setup constraints for outlets
-    
     private let albumNameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = .blue
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let artistNameLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textColor = .purple
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 14)
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private let detailStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.distribution = .fillProportionally
+        stack.alignment = .fill
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
     }()
     
     private let albumImage: UIImageView = {
@@ -41,6 +44,9 @@ class TopAlbumsTableViewCell: UITableViewCell {
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = false
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.layer.masksToBounds = true
+        image.layer.cornerRadius = 10
+        image.clipsToBounds = true
         return image
     }()
     
@@ -56,11 +62,10 @@ class TopAlbumsTableViewCell: UITableViewCell {
             guard let viewModel = viewModel else { return }
             albumNameLabel.text = viewModel.nameOfAlbum
             artistNameLabel.text = viewModel.nameOfArtist
-            //setup method to turn url string to url to data and make optional
-//            let imageURL = URL(string: viewModel.albumImageUrl)!
-//            let imageData = try! Data(contentsOf: imageURL)
-//            let image = UIImage(data: imageData)
-            albumImage.image = convertImagestring(imageString: viewModel.albumImageUrl)
+            cache.downloadFrom(endpoint: viewModel.albumImageUrl) { [weak self] (data) in
+                guard let data = data else { return }
+                self?.albumImage.image = UIImage(data: data)
+            }
         }
     }
     
@@ -78,8 +83,9 @@ class TopAlbumsTableViewCell: UITableViewCell {
     func setupView() {
         self.addSubview(cellView)
         self.cellView.addSubview(albumImage)
-        self.cellView.addSubview(albumNameLabel)
-        self.cellView.addSubview(artistNameLabel)
+        self.cellView.addSubview(detailStackView)
+        self.detailStackView.addArrangedSubview(albumNameLabel)
+        self.detailStackView.addArrangedSubview(artistNameLabel)
         
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
@@ -89,28 +95,17 @@ class TopAlbumsTableViewCell: UITableViewCell {
             
             albumImage.centerYAnchor.constraint(equalTo:self.cellView.centerYAnchor),
             albumImage.leadingAnchor.constraint(equalTo:self.cellView.leadingAnchor, constant:10),
-            albumImage.bottomAnchor.constraint(equalTo: cellView.bottomAnchor),
+            albumImage.bottomAnchor.constraint(equalTo: self.cellView.bottomAnchor, constant: -10),
+            albumImage.topAnchor.constraint(equalTo: self.cellView.topAnchor, constant: 10),
             albumImage.widthAnchor.constraint(equalToConstant:70),
-            albumImage.heightAnchor.constraint(equalToConstant:cellView.frame.height),
             
-//            albumNameLabel.topAnchor.constraint(equalTo:self.cellView.topAnchor),
-            albumNameLabel.centerYAnchor.constraint(equalTo: self.cellView.centerYAnchor),
-            albumNameLabel.leadingAnchor.constraint(equalTo:self.albumImage.trailingAnchor, constant: 10),
-            albumNameLabel.trailingAnchor.constraint(equalTo:self.cellView.trailingAnchor),
-            
-            artistNameLabel.topAnchor.constraint(equalTo:self.albumNameLabel.bottomAnchor),
-            artistNameLabel.leadingAnchor.constraint(equalTo:self.albumImage.trailingAnchor, constant: 10),
-            artistNameLabel.bottomAnchor.constraint(equalTo: self.cellView.bottomAnchor)
+            detailStackView.topAnchor.constraint(equalTo: self.albumImage.topAnchor),
+            detailStackView.bottomAnchor.constraint(equalTo: self.albumImage.bottomAnchor),
+            detailStackView.centerYAnchor.constraint(equalTo: self.cellView.centerYAnchor),
+            detailStackView.leadingAnchor.constraint(equalTo: self.albumImage.trailingAnchor, constant: 10),
+            detailStackView.trailingAnchor.constraint(equalTo: self.cellView.trailingAnchor, constant: -20)
         ])
     }
-
+    
 }
 
-//to be moved to its own file
-public func convertImagestring(imageString: String?) -> UIImage? {
-    guard let imageString = imageString else {return nil}
-    guard let imageURL = URL(string: imageString) else {return nil}
-    guard let imageData = try? Data(contentsOf: imageURL) else {return nil}
-    let image = UIImage(data: imageData)
-    return image
-}

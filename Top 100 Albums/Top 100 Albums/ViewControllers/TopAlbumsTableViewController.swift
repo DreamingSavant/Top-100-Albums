@@ -8,15 +8,20 @@
 
 import UIKit
 
+var activityIndicator = UIActivityIndicatorView()
+
 class TopAlbumsTableViewController: UITableViewController {
     
     private let viewModel = TopAlbumsViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
         // Do any additional setup after loading the view.
+        navigationController?.navigationBar.backgroundColor = .gray
+        title = "Top 100 Music Albums"
+        setupTableView()
         viewModel.getMostPopularAlbums { [weak self] in
+            
             DispatchQueue.main.async {
                 self?.tableView?.reloadData()
             }
@@ -46,26 +51,21 @@ class TopAlbumsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO: Setup transition to detail VC and passing data to detailVM
-        
-//        let detailsViewModel = 
-//        print("Hey now!")
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailsViewModel = viewModel.detailsViewModel(for: indexPath.row)
+        let vc = AlbumDetailViewController()
+        vc.viewModel = detailsViewModel
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-
+        
         tableView.register(TopAlbumsTableViewCell.self, forCellReuseIdentifier: TopAlbumsTableViewCell.reuseIdentifier)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 500
         tableView.rowHeight = 100
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        //        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: -500).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        
     }
     
 }

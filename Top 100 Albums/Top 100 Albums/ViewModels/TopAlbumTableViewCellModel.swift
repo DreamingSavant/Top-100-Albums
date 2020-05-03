@@ -26,13 +26,7 @@ class TopAlbumTableViewCellModel {
     }
     
     public var albumImageUrl: String {
-        // change string to data type??
-        return result.artworkURL!
-    }
-    // TODO: add missing variables in structs file. album url etc
-    
-    public var artistURL: String {
-        return result.artistUrl ?? ""
+        return result.artworkURL ?? ""
     }
     
 }
