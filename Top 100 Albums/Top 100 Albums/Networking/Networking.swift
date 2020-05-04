@@ -10,30 +10,47 @@ import Foundation
 
 class Networking: NSObject {
     
-    func performNetworkTask<T: Codable>(type: T.Type, completion: ((_ response: T) -> Void)?) {
+    /**
+     Service call that will give the list of the top 100 albums on itunes
+     - Parameters:
+        - type: Codable confirmed struct Model.type
+        - completion: Results of the request, general cases handled
+     
+     - Returns: If successful, will return list of top 100 albums
+     */
+    func performNetworkTask<T: Codable>(type: T.Type, completion: ((Result<(T), ErrorDescription>) -> Void)?) {
         
         let feedURL = URL(string: "https://rss.itunes.apple.com/api/v1/ca/apple-music/top-albums/all/100/explicit.json")
         
-        guard let url = feedURL else {return}
+        guard let url = feedURL else {
+            
+            return
+        }
         
         let urlRequest = URLRequest(url: url)
         
         let urlSession = URLSession.shared.dataTask(with: urlRequest) { (data, urlResponse, error) in
-            if let _ = error {
+            if let error = error {
+                completion?(.failure(.init(errorDescription: error.localizedDescription)))
                 return
             }
-            
+            guard urlResponse != nil else {
+                completion?(.failure(.init(errorDescription: "Bad url Response")))
+                return
+            }
+
             guard let data = data else {
+                completion?(.failure(.init(errorDescription: "No data returned")))
                 return
             }
             let response = Response(data: data)
-            print("There is data: \(data)")
+            
             guard let decoded = response.decode(type) else {
-                print("did not make it")
+                completion?(.failure(.init(errorDescription: error?.localizedDescription)))
                 return
             }
-            print("made it")
-            completion?(decoded)
+            print("here is the decoded file: \(decoded)")
+            completion?(.success(decoded))
         }
         
         urlSession.resume()

@@ -21,7 +21,6 @@ class TopAlbumsTableViewController: UITableViewController {
         title = "Top 100 Music Albums"
         setupTableView()
         viewModel.getMostPopularAlbums { [weak self] in
-            
             DispatchQueue.main.async {
                 self?.tableView?.reloadData()
             }

@@ -9,10 +9,17 @@
 import Foundation
 
 class AlbumDetailViewModel {
-    
+    /// Results from the selected cell stored here for access
     var result: Results
+    /// The Genres of the selected cell stored here for access
     var genres: Genres
     
+    /**
+        Initializes  the Result and genre of the selected cell to populate the detailsViewController
+            - Parameters:
+                    - result: Results of the selected Album cell
+                    - genres: The Genre(s) of the selected Album cell
+     */
     init(result: Results, genres: Genres){
         self.result = result
         self.genres = genres

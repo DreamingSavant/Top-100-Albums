@@ -16,7 +16,14 @@ final class CacheManager {
     
     static let shared = CacheManager()
     private init() {}
-    
+    /**
+        Downloads the image data from the given image url
+     
+      - Parameters:
+            - endpoint: string of the image url
+            - completion:
+     - Returns: The data of the image url for use
+     */
     func downloadFrom(endpoint: String, completion: @escaping DataHandler) {
         if let data = cache.object(forKey: endpoint as NSString) {
             completion(data as Data)
@@ -28,14 +35,14 @@ final class CacheManager {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { (dat, _, err) in
-            if let error = err {
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
                 print("Bad Task: \(error.localizedDescription)")
                 completion(nil)
                 return
             }
             
-            if let data = dat {
+            if let data = data {
                 self.cache.setObject(data as NSData, forKey: endpoint as NSString)
                 
                 DispatchQueue.main.async {

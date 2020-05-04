@@ -11,8 +11,14 @@ import Foundation
 
 class TopAlbumTableViewCellModel {
     
+    /// Values that will populate each cell will be stored in this result struct
     private let result: Results
     
+    /**
+     Initializes a new list of results to populate each cell
+     - Parameters:
+        - result: contains the list for each album containing the name of the album, artist name, and an album image
+     */
     init(result: Results) {
         self.result = result
     }

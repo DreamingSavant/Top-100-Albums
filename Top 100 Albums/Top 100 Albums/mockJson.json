@@ -1,0 +1,74 @@
+{
+  "feed": {
+    "title": "Top Albums",
+    "id": "https://rss.itunes.apple.com/api/v1/ca/apple-music/top-albums/all/3/explicit.json",
+    "author": {
+      "name": "iTunes Store",
+      "uri": "http://wwww.apple.com/ca/itunes/"
+    },
+    "links": [
+      {
+        "self": "https://rss.itunes.apple.com/api/v1/ca/apple-music/top-albums/all/3/explicit.json"
+      },
+      {
+        "alternate": "https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewTop?genreId=34&popId=82&app=music"
+      }
+    ],
+    "copyright": "Copyright © 2018 Apple Inc. Todos los derechos reservados.",
+    "country": "ca",
+    "icon": "http://itunes.apple.com/favicon.ico",
+    "updated": "2020-05-03T01:45:44.000-07:00",
+    "results": [
+      {
+        "artistName": "Drake",
+        "id": "1511037323",
+        "releaseDate": "2020-05-01",
+        "name": "Dark Lane Demo Tapes",
+        "kind": "album",
+        "copyright": "℗ 2020 OVO, under exclusive license to Republic Records, a division of UMG Recordings, Inc.",
+        "artistId": "271256",
+        "contentAdvisoryRating": "Explicit",
+        "artistUrl": "https://music.apple.com/ca/artist/drake/271256?app=music",
+        "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Music123/v4/02/32/85/02328553-ae05-1801-47bf-8f1e29871db1/20UMGIM34466.rgb.jpg/200x200bb.png",
+        "genres": [
+          {
+            "genreId": "18",
+            "name": "Hip-Hop/Rap",
+            "url": "https://itunes.apple.com/ca/genre/id18"
+          },
+          {
+            "genreId": "34",
+            "name": "Music",
+            "url": "https://itunes.apple.com/ca/genre/id34"
+          }
+        ],
+        "url": "https://music.apple.com/ca/album/dark-lane-demo-tapes/1511037323?app=music"
+      },
+      {
+        "artistName": "Lil Baby",
+        "id": "1510840178",
+        "releaseDate": "2020-02-28",
+        "name": "My Turn (Deluxe)",
+        "kind": "album",
+        "copyright": "Quality Control Music/Motown Records; ℗ 2020 Quality Control Music, LLC, under exclusive license to UMG Recordings, Inc.",
+        "artistId": "1276656483",
+        "contentAdvisoryRating": "Explicit",
+        "artistUrl": "https://music.apple.com/ca/artist/lil-baby/1276656483?app=music",
+        "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Music113/v4/f3/2e/46/f32e4642-caf7-a6c0-1081-281f5840f34f/20UMGIM30253.rgb.jpg/200x200bb.png",
+        "genres": [
+          {
+            "genreId": "18",
+            "name": "Hip-Hop/Rap",
+            "url": "https://itunes.apple.com/ca/genre/id18"
+          },
+          {
+            "genreId": "34",
+            "name": "Music",
+            "url": "https://itunes.apple.com/ca/genre/id34"
+          }
+        ],
+        "url": "https://music.apple.com/ca/album/my-turn-deluxe/1510840178?app=music"
+      }
+    ]
+  }
+}
