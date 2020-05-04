@@ -8,13 +8,16 @@
 
 import Foundation
 
-
 class TopAlbumsViewModel {
     /// access to the service calling class
-    private let networking = Networking()
+    private let networking: NetworkingProtocol
     
     /// values obtained from the service call accessible here
     private var results: Feed?
+    
+    init(_ networking: NetworkingProtocol = Networking()) {
+        self.networking = networking
+    }
     
     ///Service call if successful will store recieved data into private results variable
     public func getMostPopularAlbums(completion: (() -> Void)?) {
@@ -58,7 +61,7 @@ class TopAlbumsViewModel {
      */
     public func detailsViewModel(for index: Int) -> AlbumDetailViewModel? {
         guard let results = results else { return nil }
-        return AlbumDetailViewModel(result: results.results[index], genres: results.results[index].genres[0])
+        return AlbumDetailViewModel(result: results.results[index])
     }
     
     

@@ -11,8 +11,6 @@ import Foundation
 class AlbumDetailViewModel {
     /// Results from the selected cell stored here for access
     var result: Results
-    /// The Genres of the selected cell stored here for access
-    var genres: Genres
     
     /**
         Initializes  the Result and genre of the selected cell to populate the detailsViewController
@@ -20,9 +18,13 @@ class AlbumDetailViewModel {
                     - result: Results of the selected Album cell
                     - genres: The Genre(s) of the selected Album cell
      */
-    init(result: Results, genres: Genres){
+    init(result: Results) {
         self.result = result
-        self.genres = genres
+    }
+    
+    /// The Genres of the selected cell stored here for access
+    var genres: Genres? {
+        return result.genres.first
     }
     
     public var nameOfAlbum: String {
@@ -38,8 +40,9 @@ class AlbumDetailViewModel {
     }
     
     public var genre: String {
-        return genres.genreName ?? ""
+        return genres?.genreName ?? ""
     }
+    
     public var albumURL: String {
         return result.albumURL ?? ""
     }

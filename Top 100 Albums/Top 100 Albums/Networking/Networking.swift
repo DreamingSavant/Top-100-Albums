@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Networking: NSObject {
+protocol NetworkingProtocol {
+    func performNetworkTask<T: Codable>(type: T.Type, completion: ((Result<(T), ErrorDescription>) -> Void)?)
+}
+
+class Networking: NetworkingProtocol {
     
     /**
      Service call that will give the list of the top 100 albums on itunes
